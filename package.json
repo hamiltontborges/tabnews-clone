@@ -15,7 +15,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker-compose up -d",
+    "services:stop": "docker-compose stop",
+    "services:down": "docker-compose down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
